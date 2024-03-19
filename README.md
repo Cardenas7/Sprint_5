@@ -2,7 +2,7 @@
 
 Este repositorio contiene una aplicación web desarrollada con Streamlit que permite realizar un análisis exploratorio de un conjunto de datos sobre precios de autos en los Estados Unidos. La aplicación ofrece una serie de visualizaciones interactivas para comprender mejor la distribución y las relaciones entre diferentes variables relacionadas con los precios de los vehículos.
 
-Características principales:
+### Características principales:
 + Visualización del Conjunto de Datos: La aplicación muestra el conjunto de datos completo con el que trabaja, proporcionando a los usuarios una visión general de los datos que se están analizando.
 
 + Estadísticas Descriptivas del Precio: Ofrece estadísticas descriptivas importantes sobre los precios de los autos, incluyendo el precio promedio, la mediana y la desviación estándar.
@@ -22,12 +22,13 @@ Características principales:
 
 
 
-Uso de la Aplicación
+### Uso de la Aplicación
 Para utilizar la aplicación, simplemente sigue estos pasos:
 
-Ejecuta el script de Python proporcionado en tu entorno local.
-La aplicación abrirá en tu navegador web predeterminado.
-Interactúa con los diferentes controles y botones para explorar los datos y visualizaciones disponibles.
+1. Ejecuta el script de Python proporcionado en tu entorno local.
+2. La aplicación abrirá en tu navegador web predeterminado.
+3. Interactúa con los diferentes controles y botones para explorar los datos y visualizaciones disponibles.
+
 
 Disfruta de este proyecto en el siguiente link: https://sprint-5-4r0m.onrender.com
 

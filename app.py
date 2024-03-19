@@ -17,14 +17,13 @@ st.write(car_data)
 # marca = st.sidebar.selectbox('Seleccionar Marca', car_data['model'].unique())
 # filtro_marca = car_data[car_data['model'] == marca]
 
-# Iniciando otra sección
-st.subheader('Ahora vamos a conocer más sobre este conjuntos de datos')
+st.subheader('Analicemos un poco el precio')
 
 # Estadísticas descriptivas del precio
 st.subheader("Estadísticas descriptivas del precio")
 st.write(f"Precio promedio: {round(car_data['price'].mean())}")
 st.write(f"Mediana del precio: {round(car_data['price'].median())}")
-st.write(f"Desviación Estándar del precio: {round(car_data['price'].std())}")
+st.write(f"Desviación estándar del precio: {round(car_data['price'].std())}")
 
 # Gráfico de caja del precio    
 st.subheader("Analizando la distribución del precio")
@@ -35,6 +34,9 @@ st.plotly_chart(price_boxplot, use_container_width=True)
 # st.subheader('Gráfico de Barras por Marca')
 # fig_bar = px.bar(car_data, x='model', y='price')
 # st.plotly_chart(fig_bar)
+
+# Iniciando otra sección
+st.subheader('Ahora vamos a conocer más sobre este conjuntos de datos')
 
 # Primer botón
 build_histogram = st.checkbox('Histograma del kilometraje')
@@ -56,7 +58,7 @@ if build_scatter: # al hacer clic en el botón
     st.write('¿Notas alguna relación entre el kilometraje y el precio de los vehículos?')
             
     # crear un histograma
-    fig_2 = px.scatter(car_data, x="odometer", y="price") # crear un gráfico de dispersión
+    fig_2 = px.scatter(car_data, x="odometer", y="price", labels={"odometer":"Kilometraje","price":"Precio"}) # crear un gráfico de dispersión
         
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_2, use_container_width=True)
@@ -81,7 +83,7 @@ if build_scatter_2: # al hacer clic en el botón
     st.write('¿Observas alguna relación entre el precio y el año del modelo?')
             
     # crear un histograma
-    fig_4 = px.scatter(car_data, x="model_year", y="price") # crear un gráfico de dispersión
+    fig_4 = px.scatter(car_data, x="model_year", y="price",labels={"model_year":"Año del modelo","price":"Precio"}) # crear un gráfico de dispersión
         
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_4, use_container_width=True)
@@ -94,7 +96,7 @@ if build_circle: # al hacer clic en el botón
     st.write('¿Cuál es el tipo de combustible aceptado con mayor presencia en el conjunto de datos?')
             
     # crear un histograma
-    fig_pie = px.pie(car_data, names='fuel')
+    fig_pie = px.pie(car_data, names='fuel',labels={"fuel":"Combustible"})
         
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig_pie, use_container_width=True)
