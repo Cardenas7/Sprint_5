@@ -12,17 +12,17 @@ car_data = pd.read_csv('vehicles_us.csv') # leer los datos
 st.subheader('Este es el conjunto de datos con el que trabaja esta aplicación web')
 st.write(car_data)
 
-# Filtrado de datos
-st.sidebar.header('Filtrar Datos')
-marca = st.sidebar.selectbox('Seleccionar Marca', car_data['model'].unique())
-filtro_marca = car_data[car_data['model'] == marca]
+# # Filtrado de datos
+# st.sidebar.header('Filtrar Datos')
+# marca = st.sidebar.selectbox('Seleccionar Marca', car_data['model'].unique())
+# filtro_marca = car_data[car_data['model'] == marca]
 
 # Iniciando otra sección
 st.subheader('Ahora vamos a realizar un análisis exploratorio de los datos')
 
 # Primer botón
-hist_button = st.button('Construir histograma') # crear un botón
-if hist_button: # al hacer clic en el botón
+build_histogram = st.checkbox('Construir un histograma')
+if build_histogram: # al hacer clic en el botón
     # escribir un mensaje
     st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
             
@@ -34,8 +34,8 @@ if hist_button: # al hacer clic en el botón
     # use_container_width=True:  útil para garantizar que el gráfico se ajuste correctamente al diseño de la página y se vea bien en diferentes tamaños de pantalla.
 
 # Segundo botón
-scatter_button=st.button("Construir gráfico de dispersión")
-if hist_button: # al hacer clic en el botón
+build_scatter=st.checkbox("Construir gráfico de dispersión")
+if build_scatter: # al hacer clic en el botón
     # escribir un mensaje
     st.write('Creación de un gráfico de dispersión para el conjunto de datos de anuncios de venta de coches')
             
@@ -46,3 +46,7 @@ if hist_button: # al hacer clic en el botón
     st.plotly_chart(fig_2, use_container_width=True)
     # use_container_width=True:  útil para garantizar que el gráfico se ajuste correctamente al diseño de la página y se vea bien en diferentes tamaños de pantalla.
 
+# Visualización de datos adicionales
+st.subheader('Gráfico de Barras por Marca')
+fig_bar = px.bar(car_data, x='model', y='price')
+st.plotly_chart(fig_bar)
