@@ -36,7 +36,7 @@ st.plotly_chart(price_boxplot, use_container_width=True)
 # st.plotly_chart(fig_bar)
 
 # Iniciando otra sección
-st.subheader('Ahora vamos a conocer más sobre este conjuntos de datos')
+st.subheader('Ahora vamos a conocer más sobre este conjunto de datos')
 
 # Primer botón
 build_histogram = st.checkbox('Histograma del kilometraje')
