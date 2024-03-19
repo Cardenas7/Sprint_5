@@ -52,7 +52,7 @@ if build_histogram: # al hacer clic en el botón
     # use_container_width=True:  útil para garantizar que el gráfico se ajuste correctamente al diseño de la página y se vea bien en diferentes tamaños de pantalla.
 
 # Segundo botón
-build_scatter=st.checkbox("Relación precio-odometro")
+build_scatter=st.checkbox("Relación entre el precio y el kilometraje")
 if build_scatter: # al hacer clic en el botón
     # escribir un mensaje
     st.write('¿Notas alguna relación entre el kilometraje y el precio de los vehículos?')
@@ -77,10 +77,10 @@ if build_scatter: # al hacer clic en el botón
     st.plotly_chart(fig_3, use_container_width=True)
 
 # Cuarto botón
-build_scatter_2=st.checkbox("Relación Precio-año del modelo")
+build_scatter_2=st.checkbox("Relación entre el precio y el año del modelo")
 if build_scatter_2: # al hacer clic en el botón
     # escribir un mensaje
-    st.write('¿Observas alguna relación entre el precio y el año del modelo?')
+    st.write('¿Observas alguna relación clara?')
             
     # crear un histograma
     fig_4 = px.scatter(car_data, x="model_year", y="price",labels={"model_year":"Año del modelo","price":"Precio"}) # crear un gráfico de dispersión
